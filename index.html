@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Glaring Evolution Technologies </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="lib/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Topbar Start -->
+    <style>
+        * {
+
+            scroll-behavior: smooth;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #1b2b2b;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            /* Smooth transition for animation */
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            /* Top bar rotates */
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+            /* Middle bar disappears */
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            /* Bottom bar rotates */
+        }
+
+        span {
+            color: rgb(56, 148, 252) !important;
+        }
+
+        nav {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            /* Adjust padding for smaller screens */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo img {
+            height: 40px;
+            /* Smaller logo for mobile */
+            width: auto;
+        }
+
+        .logo span {
+            font-size: 18px;
+            /* Adjust font size for smaller screens */
+            font-weight: bold;
+            color: #1b2b2b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #003cff;
+            /* New link color */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #60adff;
+            /* New hover color */
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #1b2b2b;
+            margin: 4px 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 15px !important;
+                /* Reduce padding for smaller screens */
+            }
+
+            .logo img {
+                height: 35px !important;
+                /* Smaller logo for tablets */
+            }
+
+            .logo span {
+                font-size: 16px !important;
+
+                /* Adjust font size for tablets */
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #ffffff;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                height: 30px;
+                /* Smaller logo for mobile */
+            }
+
+            .logo span {
+                font-size: 14px;
+                /* Adjust font size for mobile */
+            }
+
+            .nav-links a {
+                font-size: 14px;
+                /* Smaller font size for mobile links */
+            }
+        }
+
+        /* Hero Section Adjustments */
+        .hero-section {
+            height: 100vh;
+            /* Full height for smaller screens */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-section .hero-logo {
+            height: 100px;
+            /* Adjust logo size for smaller screens */
+            width: 100px;
+        }
+
+        .hero-section h1 {
+            font-size: 40px;
+            /* Adjust heading size for smaller screens */
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            /* Adjust subheading size for smaller screens */
+        }
+
+        .hero-section .btn {
+            font-size: 16px;
+            /* Adjust button size for smaller screens */
+            padding: 10px 20px;
+        }
+
+        .hero-section {
+            height: 100vh;
+            /* Full height for larger screens */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* Prevent content overflow */
+        }
+
+        .hero-section .hero-logo {
+            height: 100px;
+            /* Default logo size */
+            width: 100px;
+        }
+
+        .hero-section h1 {
+            font-size: 70px;
+            /* Default heading size */
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 30px;
+            /* Default subheading size */
+            margin-bottom: 20px;
+        }
+
+        .hero-section .btn {
+            font-size: 20px;
+            /* Default button size */
+            padding: 10px 20px;
+        }
+
+        /* Responsive Styles for Tablets */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 90vh;
+                /* Adjust height for tablets */
+                padding: 15px;
+            }
+
+            .hero-section .hero-logo {
+                height: 80px !important;
+                /* Smaller logo for tablets */
+                width: 80px !important;
+            }
+
+            .hero-section h1 {
+                font-size: 60px !important;
+                /* Smaller heading size for tablets */
+            }
+
+            .hero-section p {
+                font-size: 20px !important;
+                /* Smaller subheading size for tablets */
+            }
+
+            .hero-section .btn {
+                font-size: 18px;
+                /* Smaller button size for tablets */
+                padding: 8px 16px;
+            }
+        }
+
+        /* Responsive Styles for Mobile */
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 80vh;
+                /* Adjust height for mobile */
+                padding: 10px;
+            }
+
+            .hero-section .hero-logo {
+                height: 60px;
+                /* Smaller logo for mobile */
+                width: 60px;
+            }
+
+            .hero-section h1 {
+                font-size: 40px !important;
+                /* Smaller heading size for mobile */
+            }
+
+            .hero-section p {
+                font-size: 20px !important;
+                /* Smaller subheading size for mobile */
+            }
+
+            .hero-section .btn {
+                font-size: 14px;
+                /* Smaller button size for mobile */
+                padding: 6px 12px;
+            }
+        }
+    </style>
+    <nav>
+        <div class="logo">
+            <img src="img/logo-removebg-preview.png" alt="Glaring Evolution Logo">
+            <span>Glaring Evolution Technologies</span>
+
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonial">Our Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+    const hamburger = document.querySelector('.hamburger');
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active'); // Add active class to hamburger
+    }
+    </script>
+
+
+    <!-- <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-1 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand">
+            <img src="img/logo banner.png" alt="Logo" height="100"
+                width="300">
+        </a>
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#workflow" class="nav-item nav-link">Workflow</a>
+                <a href="#gallery" class="nav-item nav-link">Gallery</a>
+                <a href="#testimonial" class="nav-item nav-link">Our Work</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+        
+    </nav> -->
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <!-- <div class="container-fluid p-0 mb-5 pb-5" id="home">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
+                    <img class="position-absolute w-100 h-100" src="img/solar-cell-with-sunlight-background-green-energy-safe-energy-solar-power-station_28914-2860.png" style="object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-uppercase mb-4" style="letter-spacing: 3px; color: rgb(159, 233, 255);">
+                                <img src="img\logo-removebg-preview.png" style="height: 100px; width: 120px;"></h4>
+                            <h3 class="display-2 font-secondary mb-4" style="color: rgb(81, 255, 0);">Glaring Evolution
+                                <span style="color: rgb(81, 255, 0);">Technologies</span>
+                            </h3>
+                            <a class="btn btn-light font-weight-bold py-3 px-5 mt-2 btn-scroll" href="#about">Towards a
+                                brighter tomorrow</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="hero-section" id="home" style="position: relative; height: 100vh; background: url('img/666c6212eaca7de826bd98ee_solar panel home.png') no-repeat center center/cover;">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <img src="img/logo-removebg-preview.png" alt="Logo" class="hero-logo mb-4">
+            <h1 class="display-4 font-weight-bold mb-3" style="color:  white; font-family: 'Playwrite RO', cursive;">Glaring Evolution Technologies</h1>
+            <p class="lead mb-4" style="color: bisque;">Solar energy—clean, abundant, and ready for you</p>
+            <div>
+                <a href="#contact" class="btn btn-primary btn-lg font-weight-bold px-4 py-2 mr-3" style="background-color: #36b6a5; color: white; ">Contact Us</a>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="hero-section" id="home"
+        style="position: relative; height: 90vh; background: url('img/banner1.png') no-repeat center center/cover;">
+        <div
+            class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <!-- Logo Image -->
+            <img src="img/logo-removebg-preview.png" alt="Logo" class="hero-logo mb-1"
+                style="height: 100px; width: 100px;">
+            <!-- Main Heading -->
+            <h1 class="display-4 font-weight-bold mb-3" style="color: rgb(255, 255, 255); font-size: 70px; ">Glaring
+                Evolution Technologies</h1>
+            <!-- Subheading -->
+            <p class="lead mb-4 font-weight-bold" style="color: rgb(255, 255, 255); font-size: 35px; margin-top: 30px;">Solar energy—clean, abundant, and
+                ready for you</p>
+            <!-- Call-to-Action Button -->
+            <a href="#contact" class="btn btn-primary btn-lg font-weight-bold px-4 py-2">Contact Us Now</a>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid mb-4 mb-lg-0" src="img/about.jpg" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">About Us</h6>
+                    <h1 class="display-4 mb-3"><span class="text-primary">Multiple Years Experience</span> In Solar
+                        Power Industry</h1>
+                    <p>We are a specialized organization engaged in turnkey and EPC (Engineering, Procurement, and
+                        Construction) projects within the solar energy sector. Over the years, we have collaborated with
+                        a diverse range of clients across both the private and public sectors.
+
+                        Our clientele includes numerous satisfied clients who have consistently appreciated the quality
+                        and reliability of our services. </p>
+                    <a class="btn btn-primary font-weight-bold py-3 px-5 mt-2" type="button" data-toggle="modal"
+                        data-target="#exampleModalLong">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <div id="workflow">
+        <div class="section-title position-relative text-center">
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Workflow</h6>
+            <h1 class="font-secondary display-4">Engineering Procurement Construction Process flow </h1>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="img/carousel-1.jpg" alt="Card Image 1">
+                <h3>A - Process Flow for Execution</h3>
+                <p>With an experienced project management team, we at Glaring Evolution Technologies follow a very
+                    professional and a systematic approach to all our solar projects.</p>
+                <a class="btn btn-primary font-weight-bold py-3 px-5 mt-2" type="button" data-toggle="modal"
+                    data-target="#exampleModalLong1">Read More</a>
+            </div>
+            <div class="card">
+                <img src="img/carousel-2.jpg" alt="Card Image 2">
+                <h3>B - Engineering</h3>
+                <p>We have a team of skilled and experienced engineers with design experience of more than 2 MW of solar
+                    projects</p>
+                <a class="btn btn-primary font-weight-bold py-3 px-5 mt-2" type="button" data-toggle="modal"
+                    data-target="#exampleModalLong2">Read More</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Gallery Start -->
+    <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0; margin: 90px 0;">
+        <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Projects</h6>
+            <h1 class="font-secondary display-4 text-white">Projects Photo Gallery</h1>
+        </div>
+        <div class="owl-carousel gallery-carousel">
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/1.jpg" alt="">
+                <a class="btn btn-primary" href="img/1.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/2.jpg" alt="">
+                <a class="btn btn-primary" href="img/2.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/4.jpg" alt="">
+                <a class="btn btn-primary" href="img/4.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/5.jpg" alt="">
+                <a class="btn btn-primary" href="img/5.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/6.jpg" alt="">
+                <a class="btn btn-primary" href="img/6.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/7.jpg" alt="">
+                <a class="btn btn-primary" href="img/7.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/8.jpg" alt="">
+                <a class="btn btn-primary" href="img/8.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/9.jpg" alt="">
+                <a class="btn btn-primary" href="img/9.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/12.jpg" alt="">
+                <a class="btn btn-primary" href="img/12.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/13.jpg" alt="">
+                <a class="btn btn-primary" href="img/13.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/14.jpg" alt="">
+                <a class="btn btn-primary" href="img/14.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img class="img-fluid w-100" src="img/15.jpg" alt="">
+                <a class="btn btn-primary" href="img/15.jpg" data-lightbox="gallery">
+                    <i class="fa fa-2x fa-plus text-white"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5" id="team">
+        <div class="container py-5">
+            <div class="section-title position-relative text-center">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Team</h6>
+                <h1 class="font-secondary display-4">Our Team</h1>
+            </div>
+            <div class="row justify-content-lg-start m-0 mb-4 pb-2 mb-sm-0 pb-sm-0">
+                <div class="col-lg-6 p-0">
+                    <div class="row m-0">
+                        <div class="col-sm-6 p-0 text-center">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h5 class="mb-2">Harshal G Kondhare</h5>
+                                <p class="text-muted font-italic mb-2">Director </p>
+                                <p>Our Dynamic leader with a 10 years industry experience in renewable energy field.
+                                    He has pursued masters in renewable energy technology from the United Kingdom and
+                                    thrives to take the company to newer heights through his technical and management
+                                    expertise.</p>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6 p-0" style="min-height: 300px;">
+                            <img class="position-absolute w-100 h-100" src="img/emp2-removebg-preview.png"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-lg-end m-0">
+                <div class="col-lg-6 p-0">
+                    <div class="row m-0">
+                        <div class="col-sm-6 p-0" style="min-height: 300px;">
+                            <img class="position-absolute w-100 h-100" src="img/emp4-removebg-preview.png"
+                                style="object-fit: cover;">
+                        </div>
+                        <div class="col-sm-6 p-0 text-center">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h5 class="mb-2">Shubham J Bhosale</h5>
+                                <p class="text-muted font-italic mb-2">General Manager</p>
+                                <p>A committed and focused person on a mission to take the company amongst the top
+                                    renewable energy technology company in the nation. He comes with a complete know how
+                                    of the industry and deep knowledge of the market</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-lg-start m-0 mb-4 pb-2 mb-sm-0 pb-sm-0">
+                <div class="col-lg-6 p-0">
+                    <div class="row m-0">
+                        <div class="col-sm-6 p-0 text-center">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h5 class="mb-2">Priyanka S Bharekar</h5>
+                                <p class="text-muted font-italic mb-2">Accountant</p>
+                                <p>With an in depth financial knowledge and accounting skills, she leads our financial
+                                    front making sure the company is on the right economical track</p>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6 p-0" style="min-height: 300px;">
+                            <img class="position-absolute w-100 h-100" src="img/emp1-removebg-preview.png"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-lg-end m-0">
+                <div class="col-lg-6 p-0">
+                    <div class="row m-0">
+                        <div class="col-sm-6 p-0" style="min-height: 300px;">
+                            <img class="position-absolute w-100 h-100" src="img/emp3-removebg-preview.png"
+                                style="object-fit: cover;">
+                        </div>
+                        <div class="col-sm-6 p-0 text-center">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h5 class="mb-2">Sahil S Yenpuree</h5>
+                                <p class="text-muted font-italic mb-2">Project Manager</p>
+                                <p>Young and passionate member with excellent communication and negotiation skills that
+                                    gives us a cutting edge over our competitors in the Market</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5" id="testimonial">
+        <div class="container py-5">
+            <div class="section-title position-relative text-center" style="margin-bottom: 20px;">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Testimonial</h6>
+                <h1 class="display-4">Our Presitgious Clients</h1>
+            </div>
+            <div style="text-align: center; margin-top: 1px;">
+                <a href="Documents/List-of-completed-projects.pdf"
+                    class="btn btn-primary font-weight-bold py-3 px-5">Download our List of All Projects</a>
+            </div>
+            <br><br><br><br><br>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="text-center">
+                            <img class="img-fluid mx-auto mb-3" src="img/image.png" style="width: 100px;">
+                            <p style="font-size: 22px;">From electric mining equipment and digital component
+                                manufacturing to eco-efficient rock processing</p>
+                            <h4>Sandvik Asia Pvt Ltd</h4>
+                        </div>
+                        <div class="text-center">
+                            <img class="img-fluid mx-auto mb-3" src="img/Harman+Primary+Logo+(Med)_thmb.jpg"
+                                style="width: 100px;">
+                            <p style="font-size: 22px;">HARMAN develops innovative solutions that create smart
+                                experiences to make life easier, productive and entertaining – at home, in the car or on
+                                the go.</p>
+                            <h4>Harman International</h4>
+                            <span>A Samsung Company</span>
+                        </div>
+                        <div class="text-center">
+                            <img class="img-fluid mx-auto mb-3" src="img/spicy.jpeg" style="width: 100px;">
+                            <p style="font-size: 22px;">It designs and manufactures supplier of axles, driveshaft and
+                                drivetrain products for the OEMs of utility vehicles and commercial vehicles,
+                                off-highway and the related aftermarket segments, domestically and internationally.</p>
+                            <h4>Spicer India Pvt Ltd</h4>
+                        </div>
+                        <div class="text-center">
+                            <img class="img-fluid mx-auto mb-3" src="img/accuramech-logo-x2.png" style="width: 100px;">
+                            <p style="font-size: 22px;">Accuramech offers a varied scope of the product including
+                                spares, variables, and mechanisms adaptable to all the major brands of IS machines.</p>
+                            <h4>Accuramech Industrial Engineering Pvt Ltd</h4>
+                            <span>Profession</span>
+                        </div>
+                        <div class="text-center">
+                            <img class="img-fluid mx-auto mb-3" src="img/logo (1).png" style="width: 100px;">
+                            <p style="font-size: 22px;">Having gained sufficient expertise in this industry and with
+                                potential growth they started developing large projects primarily in vishrantwadi, Pune
+                                Recently in past 16 years they have migrated to prominent locations of Pune and
+                                delivered landmark projects like crosswinds - Baner, Life Park - NIBM, Silver Crescent -
+                                Kharadi, Parkwayz – Wakad etc.
+
+                                ​</p>
+                            <h4>Mittal Brothers Pvt Ltd</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid py-5 bg-light" id="logo-slider">
+                <div class="container">
+
+                    <div class="logo-slider-wrapper">
+                        <div class="logo-slider">
+                            <div class="logo-item"><img src="img/Harman+Primary+Logo+(Med)_thmb.jpg" alt="Logo 1"
+                                    class="img-fluid"></div>
+                            <div class="logo-item"><img src="img/spicy.jpeg" alt="Logo 2" class="img-fluid"></div>
+                            <div class="logo-item"><img src="img/accuramech-logo-x2.png" alt="Logo 3" class="img-fluid">
+                            </div>
+                            <div class="logo-item"><img src="img/image.png" alt="Logo 4" class="img-fluid"></div>
+                            <div class="logo-item"><img src="img/logo (1).png" alt="Logo 5" class="img-fluid"></div>
+                            <!-- Duplicate logos for seamless scrolling -->
+                            <div class="logo-item"><img src="img/Harman+Primary+Logo+(Med)_thmb.jpg" alt="Logo 1"
+                                    class="img-fluid"></div>
+                            <div class="logo-item"><img src="img/spicy.jpeg" alt="Logo 2" class="img-fluid"></div>
+                            <div class="logo-item"><img src="img/accuramech-logo-x2.png" alt="Logo 3" class="img-fluid">
+                            </div>
+                            <div class="logo-item"><img src="img/image.png" alt="Logo 4" class="img-fluid"></div>
+                            <div class="logo-item"><img src="img/logo (1).png" alt="Logo 5" class="img-fluid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Logo Slider Start -->
+
+            <!-- Logo Slider End -->
+        </div>
+
+
+        <!-- Testimonial End -->
+
+
+        <!-- Contact Start -->
+        <!-- ...existing code... -->
+<div class="container-fluid py-5" id="contact">
+    <div class="container py-5">
+        <div class="section-title position-relative text-center">
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Contact</h6>
+            <h1 class="font-secondary display-4">Get In Touch</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form action="https://formspree.io/f/xldnkgzq" method="POST">
+                        <div class="form-row">
+                            <div class="col-sm-6 control-group">
+                                <label for="name">Your Name:</label>
+                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
+                                    id="name" name="name" placeholder="Your Name" required />
+                            </div>
+                            <div class="col-sm-6 control-group">
+                                <label for="email">Your Email:</label>
+                                <input type="email" class="form-control bg-secondary border-0 py-4 px-3"
+                                    id="email" name="email" placeholder="Your Email" required />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
+                                id="subject" name="subject" placeholder="Subject" required />
+                        </div>
+                        <div class="control-group">
+                            <label for="message">Your Message:</label>
+                            <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="6"
+                                id="message" name="message" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ...existing code... -->
+        <!-- Contact End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+            <div class="row pt-5">
+                <div class="col-12 mb-4 px-4">
+                    <div class="row mb-5 p-4" style="background: rgba(256, 256, 256, .05);">
+                        <div class="col-md-4">
+                            <div class="text-md-center">
+                                <h5 class="text-primary text-uppercase mb-2" style="letter-spacing: 5px;">Our Office
+                                </h5>
+                                <p class="mb-4 m-md-0" style="color: wheat;">Aishwarya Apartments, 17, Rambaug Colony,
+                                    Kothrud, Pune, Maharashtra, 411038</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-md-center">
+                                <h5 class="text-primary text-uppercase mb-2" style="letter-spacing: 5px;">Email Us</h5>
+                                <p class="mb-4 m-md-0" style="color: wheat;"><a href="mailto:glaringevolution@gmail.com"
+                                        style="color: wheat;">info@glaringevolution.com</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-md-center">
+                                <h5 class="text-primary text-uppercase mb-2" style="letter-spacing: 5px;">Call Us</h5>
+                                <p class="m-0" style="color: wheat;">+91 7507938148</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;" class="bg-dark">
+                <!-- <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                        class="fab fa-linkedin-in"></i></a> -->
+                <a class="btn btn-lg btn-outline-light btn-lg-square"
+                    href="https://www.instagram.com/glaring_evolution/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <br><br><br>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.377382482653!2d73.80971327418493!3d18.511840782579963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf6ed88b811b%3A0x8041aaadfd7952e7!2sGlaring%20Evolution%20Technologies!5e0!3m2!1sen!2sin!4v1743181246527!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+        </div>
+        <div class="container-fluid bg-dark text-white text-center border-top py-4 px-sm-3 px-md-5"
+            style="border-color: rgba(256, 256, 256, .05) !important;">
+            <p class="m-0 text-white">&copy; <a href="#">glaringevolution.com</a>. Designed with Love</p>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Solar Energy System</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid mb-4" src="img/carousel-1.jpg" alt="">
+                        <p>We are a specialized organization engaged in turnkey and EPC (Engineering, Procurement, and
+                            Construction) projects within the solar energy sector. Over the years, we have collaborated
+                            with
+                            a diverse range of clients across both the private and public sectors.</p>
+
+                        <p> Our clientele includes numerous satisfied clients who have consistently appreciated the
+                            quality
+                            and reliability of our services. The organization is spearheaded by Mr. Harshal Kondhare, a
+                            visionary leader with a Master’s degree in Solar Energy from the United Kingdom. He brings
+                            with
+                            him over two years of hands-on industrial experience in the UK, and since returning to
+                            India, he
+                            has been actively consulting for various firms within the renewable energy domain.</p>
+
+                        <p> Our portfolio features successful collaborations with several esteemed industrial clients,
+                            including Sandvik Asia Pvt. Ltd., Spicer India Ltd., and Harman International, among others.
+                        </p>
+
+                        <p> As a system integrator and channel partner, we maintain strategic associations with
+                            prominent
+                            solar companies such as Polycab Solar, Sukam Solar, Navitas Solar, and others, enabling us
+                            to
+                            deliver robust and efficient solar solutions.</p>
+
+                        <div class="card-container">
+                            <div class="card">
+                                <h3>Tie-Ups</h3>
+                                <p>Since 2016, we have been actively engaged in a wide array of government projects. We
+                                    are
+                                    a registered bidder on the Mahaetender online tendering platform, which facilitates
+                                    procurement for the Government of Maharashtra. In addition to our public sector
+                                    engagements, we also maintain strong working relationships with numerous private
+                                    sector
+                                    enterprises.
+
+                                    We are proud to serve as authorized vendors for several leading industrial
+                                    organizations, including Candi Solar, Sandvik Asia, Spicer India, Harman
+                                    International,
+                                    and Accurate Industrial Controls Pvt. Ltd., among others.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Our Mission</h3>
+                                <p>Our vision is to emerge as a premier consulting firm in the renewable energy sector
+                                    by
+                                    consistently delivering timely, high-quality services that enable our clients to
+                                    achieve
+                                    optimal profitability. Beyond business, we are committed to contributing to India’s
+                                    transition toward a sustainable energy future and playing our part in safeguarding
+                                    the
+                                    planet—for current and future generations.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">A - Process Flow for Execution</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid mb-4" src="img/carousel-1.jpg" alt="">
+                        <p>With an experienced project management team, we at Glaring Evolution
+                            Technologies follow a very professional and a systematic approach to all our solar
+                            projects.</p>
+                        <table>
+                            <tr>
+                                <th colspan="2" class="header">OUR PROCESS FOR SOLAR PROJECT EXECUTION</th>
+                            </tr>
+                            <tr>
+                                <td><b>Load Assessment</b></td>
+                                <td>Load Assessment for light loads and heavy loads of the building or industry in order
+                                    to
+                                    calculate the system capacity required.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Prefeasibility Study</b></td>
+                                <td>Prefeasibility Study of the available area to analyze system capacity possible and
+                                    testing structure and climatic parameters for stability to support the module load,
+                                    shading and grid accessibility connectivity.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Vendor Finalization</b></td>
+                                <td>Vendor Finalization for equipment’s required all through the project along with
+                                    qualified civil and electrical contractors.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Project Planning</b></td>
+                                <td>Project Planning including preparation of detailed engineering drawings, project
+                                    execution plant, system sizing and plant lay out.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Delivery of Equipment</b></td>
+                                <td>Delivery of Equipment to project site after comprehensive testing done based on
+                                    random
+                                    sampling to ensure quality and consistency.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Installation and Commissioning</b></td>
+                                <td>Installation and Commissioning of the plant’s mounting structure, modules and other
+                                    electrical equipment’s. This also covers the deployment of necessary monitoring
+                                    system.
+                                    Conducting tests and final handing over is done further to this.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">B - Engineering</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid mb-4" src="img/carousel-1.jpg" alt="">
+                        <p>We have a team of skilled and experienced engineers with design experience of more
+                            than 2 MW of solar projects</p>
+                        <table>
+                            <tr>
+                                <th colspan="2" class="header">ENGINEERING</th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" class="header">Electrical Direct Current ( Pre Inverter )</th>
+                            </tr>
+                            <tr>
+                                <td><b>Plot Plan Layout</b></td>
+                                <td>Shadow losses can be significant depending on distance between modules</td>
+                            </tr>
+                            <tr>
+                                <td><b>Module Series & Parallel Combination</b></td>
+                                <td>Can lead to cost overrun in case of oversizing & electrical hazards in case
+                                    undersized
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>String Combiner Box</b></td>
+                                <td>Bus bar size is critical to the safety of equipment and enough redundancy ensures
+                                    higher
+                                    equipment uptime</td>
+                            </tr>
+                            <tr>
+                                <td><b>Cable Sizing</b></td>
+                                <td>Increases cost and losses if inappropriately sized</td>
+                            </tr>
+                            <tr>
+                                <td><b>Inverter</b></td>
+                                <td>Depending on Technology rated voltage might significantly differ from running
+                                    voltage
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+
+
+        <!-- Scroll to Bottom -->
+        <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
+                class="fa fa-angle-double-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+</body>
+
+</html>
